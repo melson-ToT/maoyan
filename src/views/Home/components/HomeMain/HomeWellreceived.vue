@@ -6,8 +6,11 @@
 </template>
 
 <script>
+//引入"纵向滚动"的子组件
 import HomeFavorable from "./HomeFavorable.vue";
+//引入"横向滚动"的子组件
 import HomeList from "./HomeList";
+//引入api的index.js文件，作为axios的请求
 import { getHotList } from "@/api";
 export default {
   name: "HomeWellreceived",
@@ -40,6 +43,6 @@ export default {
 <style lang="less" scoped>
 .HomeWellreceived {
   width: 100%;
-  height: calc(100% - 50px - 61px - 49px);
+  height: 100%;
 }
 </style>
