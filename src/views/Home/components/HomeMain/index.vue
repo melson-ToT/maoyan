@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="height:100%">
         <HomeWellreceived v-if="tabIndex === 0"/>
     </div>
 </template>

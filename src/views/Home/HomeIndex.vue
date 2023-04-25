@@ -20,12 +20,16 @@ export default {
   data(){
     return {
       tabIndex : 0,
+      info: {}
     }
   },
 
   methods: {
     tabChange(index){
        this.tabIndex = index
+       this.info = res
+       window.localStorage.setItem('info', JSON.stringify(this.info))
+
     }
   },
 

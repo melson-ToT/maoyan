@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="HomeWellreceived">
     <HomeFavorable :hotList="hotList"/>
     <HomeList :hotList="hotList" />
   </div>
@@ -38,5 +38,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+.HomeWellreceived {
+  width: 100%;
+  height: calc(100% - 50px - 61px - 49px);
+}
 </style>
