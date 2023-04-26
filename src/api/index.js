@@ -11,4 +11,15 @@ export function getHotList(){
       }
     })
 }
+export function ContinueLoading(){
+  return axios({
+    url:'/ajax/moreComingList',
+    method: 'get',
+    params:{
+          optimus_risk_level: 71,
+          optimus_code: 10,
+    }
+  })
+}
+
 

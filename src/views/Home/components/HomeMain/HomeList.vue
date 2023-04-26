@@ -21,7 +21,7 @@
 import BetterScroll from "better-scroll";
 export default {
   name: "HomeList",
-  props: ["hotList"],
+  props: ["hotList","Loading"],
   created() {},
   mounted() {
     //BetterScroll的实例，必须放置在项目挂载后生命周期钩子内
@@ -35,10 +35,12 @@ export default {
         click: true,
         pullUpLoad: true,
       });
-      // 监听触底
+      // 监听触底        ,()内的就是一个回调函数
       bs.on("pullingUp", () => {
         console.log("已经拉到底了");
         // 回调函数，()内是监听的事件
+    
+      
       });
     });
   },

@@ -1,7 +1,7 @@
 <template>
   <div class="HomeWellreceived">
     <HomeFavorable :hotList="hotList"/>
-    <HomeList :hotList="hotList" />
+    <HomeList :hotList="hotList" :Loading="Loading"/>
   </div>
 </template>
 
@@ -12,6 +12,7 @@ import HomeFavorable from "./HomeFavorable.vue";
 import HomeList from "./HomeList";
 //引入api的index.js文件，作为axios的请求
 import { getHotList } from "@/api";
+
 export default {
   name: "HomeWellreceived",
 
