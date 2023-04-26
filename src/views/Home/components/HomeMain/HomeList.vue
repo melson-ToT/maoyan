@@ -18,20 +18,44 @@
 </template>
 
 <script>
+import BetterScroll from "better-scroll";
 export default {
   name: "HomeList",
   props: ["hotList"],
   created() {},
-  mounted() {},
+  mounted() {
+    //BetterScroll的实例，必须放置在项目挂载后生命周期钩子内
+    this.$nextTick(() => {
+      //在 mounted(){} 生命周期钩子内，加一个 this.$nextTick(()=>{}) 的方法，将 new BetterScroll缩写的实例对象放入里面
+      const bs = new BetterScroll(".home-list", {
+        observeDOM: true,
+        startY: 0,
+        scrollY: true,
+        scrollX: false,
+        click: true,
+        pullUpLoad: true,
+      });
+      // 监听触底
+      bs.on("pullingUp", () => {
+        console.log("已经拉到底了");
+        // 回调函数，()内是监听的事件
+      });
+    });
+  },
 };
 </script>
 
 <style lang="less" scoped>
 .home-list {
+  width: 100%;
   height: calc(100% - 205px);
+  overflow: auto;
   ul {
-    height: 100%;
-    overflow-y: auto;
+    // height: 100%;
+    // overflow-y: auto;
+    overflow: hidden;
+    display: inline-flex;
+    flex-direction: column;
     li {
       list-style: none;
       display: flex;

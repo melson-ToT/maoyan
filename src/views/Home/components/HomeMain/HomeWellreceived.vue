@@ -29,7 +29,7 @@ export default {
     getHot() {
       getHotList().then((res) => {
         this.hotList = res.data.data.hot;
-        console.log(this.hotList);
+        // console.log(this.hotList);
       });
     },
   },
