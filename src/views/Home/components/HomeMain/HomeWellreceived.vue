@@ -1,7 +1,7 @@
 <template>
   <div class="HomeWellreceived">
     <HomeFavorable :hotList="hotList"/>
-    <HomeList :hotList="hotList" :Loading="Loading"/>
+    <HomeList :hotList="hotList"/>
   </div>
 </template>
 
