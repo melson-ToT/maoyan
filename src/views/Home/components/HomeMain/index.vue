@@ -1,11 +1,13 @@
 <template>
     <div class="home-main">
         <HomeWellreceived v-if="tabIndex === 0"/>
+        <HomeCinema v-if="tabIndex === 1"/>
     </div>
 </template>
 
 <script>
 import HomeWellreceived from "./HomeWellreceived.vue";
+import HomeCinema from "./HomeCinema.vue";
 
 export default {
     name: 'HomeMain',
@@ -25,6 +27,7 @@ export default {
     },
     components: {
         HomeWellreceived,
+        HomeCinema
     }
 };
 </script>

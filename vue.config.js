@@ -11,7 +11,14 @@ module.exports = defineConfig({
           '^/api':''
         }
       },
-    }
+      "/ajax":{
+        target: 'https://i.maoyan.com/ajax/',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/ajax':''
+        }
+      },
+    },
   }
 });
 
