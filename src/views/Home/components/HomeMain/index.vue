@@ -31,6 +31,6 @@ export default {
 
 <style lang="less" scoped>
 .home-main {
-    height:calc(100% - 50px - 61px - 47px - 49px) ;
+    height:calc(100% - 61px - 47px) ;
 }
 </style>
