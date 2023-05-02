@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <HomeF />
+    <router-view />
   </div>
 </template>
 
 <script>
 
-import HomeF from './views/Home/HomeF.vue'
+
 
 export default {
   components:{
-    HomeF
+    
   }
 }
 </script>
