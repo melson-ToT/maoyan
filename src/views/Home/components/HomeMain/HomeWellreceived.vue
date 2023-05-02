@@ -1,7 +1,7 @@
 <template>
   <div class="HomeWellreceived">
-    <HomeFavorable :hotList="hotList"/>
-    <HomeList :hotList="hotList"/>
+    <HomeFavorable />
+    <HomeList />
   </div>
 </template>
 
@@ -10,30 +10,11 @@
 import HomeFavorable from "./HomeFavorable.vue";
 //引入"横向滚动"的子组件
 import HomeList from "./HomeList";
-//引入api的index.js文件，作为axios的请求
-import { getHotList } from "@/api";
+//引入api的index.js文件，作为axios的请
 
 export default {
   name: "HomeWellreceived",
 
-  data() {
-    return {
-      hotList: [],
-    };
-  },
-
-  created() {
-    this.getHot();
-  },
-
-  methods: {
-    getHot() {
-      getHotList().then((res) => {
-        this.hotList = res.data.data.hot;
-        // console.log(this.hotList);
-      });
-    },
-  },
   components: {
     HomeFavorable,
     HomeList,

@@ -1,21 +1,16 @@
 <template>
   <div id="app">
-    <HomeHeader />
-    <HomeIndex />
-    <HomeFooter />
+    <HomeF />
   </div>
 </template>
 
 <script>
 
-import HomeIndex from './views/Home/HomeIndex.vue'
-import HomeFooter from "./views/Home/HomeFooter.vue"
-import HomeHeader from "./views/Home/HomeHeader.vue"
+import HomeF from './views/Home/HomeF.vue'
+
 export default {
   components:{
-    HomeHeader,
-    HomeIndex,
-    HomeFooter,
+    HomeF
   }
 }
 </script>

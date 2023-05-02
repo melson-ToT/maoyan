@@ -15,23 +15,36 @@
 
 <script>
 import BetterScroll from "better-scroll";
+import { getHotList } from "@/api";
 export default {
   name: "HomeFavorable",
-  props: ["hotList"],
-  mounted() {
-    //BetterScroll的实例，必须放置在项目挂载后生命周期钩子内
-    this.$nextTick(() => {
-      //在 mounted(){} 生命周期钩子内，加一个 this.$nextTick(()=>{}) 的方法，将 new BetterScroll缩写的实例对象放入里面
-      new BetterScroll(".wrapper", {
-        observeDOM: true,
-        startX: 0,
-        scrollX: true,
-        scrollY: false,
-        click: true,
-      });
-    });
+  data() {
+    return {
+      hotList: [],
+    };
   },
-  methods: {},
+  mounted() {
+    this.getHot();
+  },
+  methods: {
+    getHot() {
+      getHotList().then((res) => {
+        this.hotList = res.data.data.hot;
+        // console.log(this.hotList);
+        this.$nextTick(() => {
+          //在 mounted(){} 生命周期钩子内，加一个 this.$nextTick(()=>{}) 的方法，将 new BetterScroll缩写的实例对象放入里面
+          new BetterScroll(".wrapper", {
+            observeDOM: true,
+            startX: 0,
+            scrollX: true,
+            scrollY: false,
+            click: true,
+          });
+        });
+        //BetterScroll的实例，必须放置在项目挂载后生命周期钩子内
+      });
+    },
+  },
 };
 </script>
 

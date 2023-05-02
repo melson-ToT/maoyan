@@ -3,6 +3,15 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const router =new VueRouter()
+// const routes = [
+//     // {
+//     //     path:"/home",
+//     //     components:()=>import("@/views/Home")
+//     // }
+// ]
+
+const router = new VueRouter({
+    // routes
+})
 
 export default router
