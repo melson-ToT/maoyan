@@ -10,7 +10,13 @@ const routes = [
     },
     {
         path: "/home", //自带#号
-        component: () => import("../views/Home/HomeF.vue")
+        component: () => import("../views/Home/HomeF.vue"),
+        children:[
+            {
+                path: "/home", 
+                component:()=>import("../views/Home/HomeIndex.vue")
+            },
+        ]
     },
     {
         path: "/city", 

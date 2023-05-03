@@ -14,6 +14,7 @@
 </template>
 
 <script>
+let res
 import BetterScroll from "better-scroll";
 import { getHotList } from "@/api";
 export default {

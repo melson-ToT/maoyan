@@ -43,7 +43,7 @@ export default {
 .Tab {
   width: 100%;
   height: 46px;
-  background: #fff;
+  background:#fff;
   border-bottom: 1px solid #e8e8e8;
   display: flex;
   justify-content: space-between;

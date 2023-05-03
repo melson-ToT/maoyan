@@ -17,7 +17,7 @@ export default {
           {
             title: '电影',
             icon: 'dianying',
-            router: '/dian' 
+            router: '/home' 
           },
           {
             title: '视频',
@@ -49,7 +49,7 @@ export default {
   methods: {
     tabHandle(index, router) {
       this.iconIndex = index;
-    //   this.$router.push(router)
+      this.$router.push(router)
     }
   },
 };

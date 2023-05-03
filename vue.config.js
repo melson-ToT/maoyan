@@ -1,5 +1,5 @@
 const { defineConfig } = require("@vue/cli-service");
-const URL = 'https://i.maoyan.com/api/'
+const URL = 'https://i.maoyan.com:/api/'
 module.exports = defineConfig({
   transpileDependencies: true,
   devServer:{
@@ -11,13 +11,13 @@ module.exports = defineConfig({
           '^/api':''
         }
       },
-      "/ajax":{
-        target: 'https://i.maoyan.com/ajax/',
-        changeOrigin:true,
-        pathRewrite:{
-          '^/ajax':''
-        }
-      },
+      // "/ajax":{
+      //   target: 'https://i.maoyan.com/ajax/',
+      //   changeOrigin:true,
+      //   pathRewrite:{
+      //     '^/ajax':''
+      //   }
+      // },
     },
   }
 });
