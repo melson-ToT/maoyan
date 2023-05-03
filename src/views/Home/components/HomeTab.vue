@@ -1,6 +1,6 @@
 <template>
   <div class="Tab">
-    <span class="uspan">杭州</span>
+    <span class="uspan" @click="Gotcity">杭州</span>
     <ul>
       <li
         v-for="(item, index) in list"
@@ -32,6 +32,9 @@ export default {
       this.activeindex = index;
       this.$emit('tabChange', index);
     },
+    Gotcity(){
+      this.$router.push("/city")
+    }
   },
 };
 </script>

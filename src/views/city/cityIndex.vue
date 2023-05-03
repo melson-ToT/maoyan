@@ -1,6 +1,6 @@
 <template>
     <div>
-        这是详情的页面
+        这是城市的页面
     </div>
 </template>
 

@@ -17,7 +17,8 @@ const routes = [
         component: () => import("../views/city/cityIndex.vue")  
     },
     {
-        path: "/detail", 
+        path: "/detail/:id", 
+        props:true,
         component: () => import("../views/detail/detailIndex.vue")  
     },
     {

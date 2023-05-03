@@ -1,7 +1,7 @@
 <template>
   <div class="home-list">
     <ul>
-      <li v-for="(item,index) in hotList" :key="index">
+      <li v-for="(item,index) in hotList" :key="index" @click="Gotdetail(item)">
         <img :src="item.img" alt="" />
         <div class="item">
           <p>{{ item.nm }}</p>
@@ -63,6 +63,9 @@ export default {
         });
       });
     },
+    Gotdetail(item){
+      this.$router.push("/detail/" + item.id)
+    }
   },
 };
 </script>

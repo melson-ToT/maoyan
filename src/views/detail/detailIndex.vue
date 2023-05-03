@@ -1,11 +1,13 @@
 <template>
     <div>
-        这是城市选择的页面
+        这是详情的页面-{{ id }}
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+    props:["id"]
+};
 </script>
 
 <style scoped>
