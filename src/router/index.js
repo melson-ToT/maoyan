@@ -11,16 +11,10 @@ const routes = [
     {
         path: "/home", //自带#号
         component: () => import("../views/Home/HomeF.vue"),
-        // children:[
-        //     {
-        //         path: "/home/dian", 
-        //         component:()=>import("../views/Home/HomeN/HomeIndex.vue")
-        //     },
-        //     // {
-        //     //     // path: "/home/video", 
-        //     //     // component:()=>import("../views/Home/HomeNva/HomeIndex.vue")
-        //     // },
-        // ]
+    },
+    {
+        path: "/login", 
+        component: () => import("../views/LogIn/LogIn.vue"),
     },
     {
         path: "/city", 
