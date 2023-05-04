@@ -1,6 +1,6 @@
 <template>
     <div class="Logo">
-        <img src="../../../assets/img/1.png" alt="">
+        <img src="../../../../assets/img/1.png" alt="">
         <div>
             <span>发现最新最热电影</span>
             <a href="">打开App</a>

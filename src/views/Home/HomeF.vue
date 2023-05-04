@@ -1,19 +1,19 @@
 <template>
     <div>
     <HomeHeader />
-    <HomeIndex />
+    <HomeN />
     <HomeFooter />
     </div>
 </template>
 
 <script>
 import HomeHeader from "./HomeHeader.vue"
-import HomeIndex from "./HomeIndex.vue"
+import HomeN from "./HomeN/HomeNav.vue"
 import HomeFooter from "./HomeFooter.vue"
 export default {
     components:{
        HomeHeader, 
-       HomeIndex,
+       HomeN,
        HomeFooter
     }
 };

@@ -17,12 +17,12 @@ export default {
           {
             title: '电影',
             icon: 'dianying',
-            router: '/home' 
+            router: '/home/dian' 
           },
           {
             title: '视频',
             icon: 'shipin',
-            router: '/shi'
+            router: '/home/video'
           },
           {
             title: '小影视',
