@@ -1,6 +1,6 @@
 <template>
   <div class="HomeFooter">
-    <div v-for="(item, index) in tabList" :key="index" :style="{color: iconIndex === index ? 'blue' : ''}" @click="tabHandle(index, item.router)">
+    <div v-for="(item, index) in tabList" :key="index" :class="{active: iconIndex === index}" @click="tabHandle(index)">
       <span :class="'iconfont icon-' + item.icon"></span>
       <span>{{item.title}}</span>
     </div>
@@ -17,27 +17,22 @@ export default {
           {
             title: '电影',
             icon: 'dianying',
-            router: '/home/dian' 
           },
           {
             title: '视频',
             icon: 'shipin',
-            router: '/home/video'
           },
           {
             title: '小影视',
             icon: 'duanshipinhuati',
-            router: '/xiao'
           },
           {
             title: '播出',
             icon: '16shipin-1',
-            router: '/bo'
           },
           {
             title: '我的',
             icon: 'wode',
-            router: '/wo'
           }
         ],
         iconIndex: 0
@@ -47,9 +42,9 @@ export default {
   mounted() {},
 
   methods: {
-    tabHandle(index, router) {
+    tabHandle(index) {
       this.iconIndex = index;
-      this.$router.push(router)
+      this.$emit('iconchange', index);
     }
   },
 };
@@ -81,6 +76,9 @@ export default {
     & span:last-child {
         font-size: 12px;
     }
+  }
+  .active {
+    color: red;
   }
 }
 </style>

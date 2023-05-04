@@ -11,16 +11,16 @@ const routes = [
     {
         path: "/home", //自带#号
         component: () => import("../views/Home/HomeF.vue"),
-        children:[
-            {
-                path: "/home/dian", 
-                component:()=>import("../views/Home/HomeN/HomeIndex.vue")
-            },
-            // {
-            //     // path: "/home/video", 
-            //     // component:()=>import("../views/Home/HomeNva/HomeIndex.vue")
-            // },
-        ]
+        // children:[
+        //     {
+        //         path: "/home/dian", 
+        //         component:()=>import("../views/Home/HomeN/HomeIndex.vue")
+        //     },
+        //     // {
+        //     //     // path: "/home/video", 
+        //     //     // component:()=>import("../views/Home/HomeNva/HomeIndex.vue")
+        //     // },
+        // ]
     },
     {
         path: "/city", 
@@ -40,10 +40,10 @@ const routes = [
 const router = new VueRouter({
     routes,
 })
-const originalPush = VueRouter.prototype.push
-VueRouter.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch((err) => err)
-}
+// const originalPush = VueRouter.prototype.push
+// VueRouter.prototype.push = function push(location) {
+//   return originalPush.call(this, location).catch((err) => err)
+// }
 
 
 

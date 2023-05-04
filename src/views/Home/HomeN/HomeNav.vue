@@ -1,7 +1,6 @@
 <template>
     <div>
-        <HomeIndex/>
-        
+        <HomeIndex v-if="iconIndex === 0"/> 
     </div>
 </template>
 
@@ -9,6 +8,7 @@
 import HomeIndex from "./HomeIndex.vue"
 
 export default {
+  props:["iconIndex"],
   components:{
     HomeIndex,
 
