@@ -83,7 +83,7 @@ const router = new VueRouter({
 router.beforeEach((to,from,next)=>{
     //console.log(to);
     //console.log(from);
-    if(to.meta.requireLogin){//判断（去到的的哈希值存在，就可以对应的页面）
+    if(to.meta.requireLogin){//判断（如果去对应的哈希值页面，）
         if(localStorage.getItem("token")){ //判断（如果有("token"）
             next()//守卫放行
         }else{
