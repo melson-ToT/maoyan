@@ -40,6 +40,6 @@ export default {
 <style lang="less" scoped>
 .father {
   width: 100%;
-  height: calc(100% - 49px - 50px);
+  height: 100%;
 }
 </style>

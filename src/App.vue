@@ -1,11 +1,25 @@
 <template>
   <div id="app">
     <router-view />
+    <HomeFooter />
   </div>
 </template>
 
+
 <script>
 
+import HomeFooter from "./views/HomeFooter.vue"
+export default {
+  data(){
+    return {
+    }
+  },
+    components:{
+       HomeFooter,
+    },
+
+
+};
 </script>
 
 

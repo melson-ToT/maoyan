@@ -1,24 +1,28 @@
 <template>
     <div>
-        <HomeIndex v-if="iconIndex === 0"/> 
-        <HomeMy v-if="iconIndex === 4"/>
+        <HomeIndex /> 
+        <HomeVideo /> 
     </div>
 </template>
 
 <script>
 import HomeIndex from "./HomeIndex.vue"
-import HomeMy from "./HomeMy.vue"
+import HomeVideo from "./HomeVideo.vue"
+
 
 export default {
-  props:["iconIndex"],
   components:{
     HomeIndex,
-    HomeMy,
+    HomeVideo,
+   
 
   }
 };
 </script>
 
 <style lang="less" scoped>
-
+div {
+  width: 100%;
+  height: calc(100% - 50px - 49px);
+}
 </style>

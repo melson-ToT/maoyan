@@ -9,8 +9,16 @@ const routes = [
         redirect:"/home",//默认（../views/Home/HomeF.vue）为重定向
     },
     {
-        path: "/home", //自带#号
+        path: "/home", 
         component: () => import("../views/Home/HomeF.vue"),
+    },
+    {
+        path: "/film", 
+        component: () => import("../views/Home/HomeN/HomeIndex.vue"),
+    },
+    {
+        path: "/video", 
+        component: () => import("../views/Home/HomeN/HomeVideo.vue"),
     },
     {
         path: "/login", 
