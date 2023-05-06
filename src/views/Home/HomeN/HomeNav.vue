@@ -1,29 +1,28 @@
 <template>
-    <div>
-        <HomeIndex /> 
-        <HomeVideo /> 
-        <HomeSmallvideo /> 
-        <HomeBroadcast /> 
-        <HomeMy /> 
-    </div>
+  <div>
+    <HomeIndex />
+    <HomeVideo />
+    <HomeSmallvideo />
+    <HomeBroadcast />
+    <HomeMy />
+  </div>
 </template>
 
 <script>
-import HomeIndex from "./HomeIndex.vue"
-import HomeVideo from "./HomeVideo.vue"
-import HomeSmallvideo from "./HomeSmallvideo.vue"
-import HomeBroadcast from "./HomeBroadcast.vue"
-import HomeMy from "./HomeMy.vue"
-
+import HomeIndex from "./HomeIndex.vue";
+import HomeVideo from "./HomeVideo.vue";
+import HomeSmallvideo from "./HomeSmallvideo.vue";
+import HomeBroadcast from "./HomeBroadcast.vue";
+import HomeMy from "./HomeMy.vue";
 
 export default {
-  components:{
+  components: {
     HomeIndex,
     HomeVideo,
     HomeSmallvideo,
     HomeBroadcast,
     HomeMy,
-  }
+  },
 };
 </script>
 
