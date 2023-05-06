@@ -21,6 +21,18 @@ const routes = [
         component: () => import("../views/Home/HomeN/HomeVideo.vue"),
     },
     {
+        path: "/Smallvideo", 
+        component: () => import("../views/Home/HomeN/HomeSmallvideo.vue"),
+    },
+    {
+        path: "/broadcast", 
+        component: () => import("../views/Home/HomeN/HomeBroadcast.vue"),
+    },
+    {
+        path: "/my", 
+        component: () => import("../views/Home/HomeN/HomeMy.vue"),
+    },
+    {
         path: "/login", 
         component: () => import("../views/LogIn/LogIn.vue"),
     },

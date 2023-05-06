@@ -29,31 +29,23 @@ export default {
           {
             title: '小影视',
             icon: 'duanshipinhuati',
-            router:"smallvideo"
+            router:"/Smallvideo"
           },
           {
             title: '播出',
             icon: '16shipin-1',
-            router:"broadcast"
+            router:"/broadcast"
           },
           {
             title: '我的',
             icon: 'wode',
-            router:"my"
+            router:"/my"
           }
         ],
 
     };
   },
 
-  mounted() {},
-
-  // methods: {
-  //   tabHandle(index) {
-  //     this.iconIndex = index;
-  //     this.$emit('iconchange', index);
-  //   }
-  // },
 };
 </script>
 
@@ -84,7 +76,7 @@ export default {
         font-size: 12px;
     }
   }
-  .active {
+  .router-link-active {
     color: red;
   }
 }
