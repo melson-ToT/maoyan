@@ -1,7 +1,7 @@
 <template>
   <div class="HomeFooter">
     <router-link v-for="(item, index) in tabList" :key="index" 
-      :to="item.router"
+      :to="'/home'+item.router"
       tag="div">
       <span :class="'iconfont icon-' + item.icon"></span>
       <span>{{item.title}}</span>

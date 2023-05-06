@@ -1,14 +1,15 @@
 <template>
     <div>
     <HomeHeader />
-    <HomeN />
-    
+    <router-view />
+    <HomeFooter />
     </div>
 </template>
 
 <script>
 import HomeHeader from "./HomeHeader.vue"
-import HomeN from "./HomeN/HomeNav.vue"
+// import HomeN from "./HomeN/HomeNav.vue"
+import HomeFooter from "./HomeFooter.vue"
 export default {
     data(){
       return {
@@ -16,10 +17,10 @@ export default {
       }
     },
 
-
     components:{
        HomeHeader, 
-       HomeN,
+    //    HomeN,
+       HomeFooter,
     }
 };
 </script>

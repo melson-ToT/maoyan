@@ -6,32 +6,35 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: "/", 
-        redirect:"/home",//默认（../views/Home/HomeF.vue）为重定向
+        redirect:"/home",//默认为重定向
     },
     {
         path: "/home", 
         component: () => import("../views/Home/HomeF.vue"),
+        children:[
+            {
+                path: "/home/film", 
+                component: () => import("../views/Home/HomeN/HomeIndex.vue"),
+            },
+            {
+                path: "/home/video", 
+                component: () => import("../views/Home/HomeN/HomeMy.vue"),
+            },
+            {
+                path: "/home/Smallvideo", 
+                component: () => import("../views/Home/HomeN/HomeSmallvideo.vue"),
+            },
+            {
+                path: "/home/broadcast", 
+                component: () => import("../views/Home/HomeN/HomeBroadcast.vue"),
+            },
+            {
+                path: "/home/my", 
+                component: () => import("../views/Home/HomeN/HomeMy.vue"),
+            },
+        ]
     },
-    {
-        path: "/film", 
-        component: () => import("../views/Home/HomeN/HomeIndex.vue"),
-    },
-    {
-        path: "/video", 
-        component: () => import("../views/Home/HomeN/HomeVideo.vue"),
-    },
-    {
-        path: "/Smallvideo", 
-        component: () => import("../views/Home/HomeN/HomeSmallvideo.vue"),
-    },
-    {
-        path: "/broadcast", 
-        component: () => import("../views/Home/HomeN/HomeBroadcast.vue"),
-    },
-    {
-        path: "/my", 
-        component: () => import("../views/Home/HomeN/HomeMy.vue"),
-    },
+
     {
         path: "/login", 
         component: () => import("../views/LogIn/LogIn.vue"),
