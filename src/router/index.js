@@ -13,6 +13,11 @@ const routes = [
         component: () => import("../views/Home/HomeF.vue"),
         children:[
             {
+                path: "/home", 
+                redirect: "/home/film",
+                
+            },
+            {
                 path: "/home/film", 
                 component: () => import("../views/Home/HomeN/HomeIndex.vue"),
                 meta:{requireAlive:true}//页面切换时，保持原来的操作，不会被销毁
