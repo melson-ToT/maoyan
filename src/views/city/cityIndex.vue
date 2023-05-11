@@ -17,6 +17,7 @@
 
 <script>
 // import { getHotList } from "@/api";
+import { mapMutations} from "vuex";
 export default {
   data() {
     return {
@@ -244,8 +245,13 @@ export default {
     },
   },
   methods:{
+    ...mapMutations(["changeCity"]),
     getcity(item){//上面共用一个事件，（item，val），此时的item是形参
+      this.changeCity({name:item.name,id:item.cityId})//store仓库的 mutations 方法，name是payload.name,id是payload.id
       console.log(item.name);//打印(当前的地址)
+      console.log(item.cityId);
+      localStorage.setItem("name",item.name)//当再次登录时，就是上次点击的城市
+      localStorage.setItem("id",item.cityId)
       this.$router.go(-1)//点击时，后退一步
 
     }

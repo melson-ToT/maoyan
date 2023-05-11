@@ -1,6 +1,6 @@
 <template>
   <div class="Tab">
-    <span class="uspan" @click="Gotcity">杭州</span>
+    <span class="uspan" @click="Gotcity">{{cityName}}</span>
     <ul>
       <li
         v-for="(item, index) in list"
@@ -25,8 +25,11 @@ export default {
       activeindex:0
     };
   },
-  mounted() {},
-
+  computed:{
+    cityName(){
+      return this.$store.state.cityName
+    }
+  },
   methods: {
     tabHandle(index) {
       this.activeindex = index;
