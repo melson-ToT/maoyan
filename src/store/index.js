@@ -3,8 +3,8 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-    state: {
+export default new Vuex.Store({//死剁
+    state: {//仓库--死带踢
       //城市相关的本地存储
       cityName:localStorage.getItem("name") || "北京", //将最后的城市选择，存储到本地：当再次登录时，就是上次点击的城市
       cityId:localStorage.getItem("id") || 1002,       //setItem:是存，getItem：是取，||:如果没有存储过，则默认是："北京",1002,
