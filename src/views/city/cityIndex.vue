@@ -1,5 +1,5 @@
 <template>
-  <div class="father">
+  <div class="father" v-if="list.length">
     <div class="not-city">
       <p>热门城市</p>
       <div class="not-diqu" v-for="item in hotCity.cities" :key="item.cityId" @click="getcity(item)">
@@ -250,22 +250,101 @@ export default {
       this.changeCity({name:item.name,id:item.cityId})//store仓库的 mutations 方法，name是payload.name,id是payload.id
       console.log(item.name);//打印(当前的地址)
       console.log(item.cityId);
-      localStorage.setItem("name",item.name)//当再次登录时，就是上次点击的城市
+      localStorage.setItem("name",item.name)//将最后的城市选择，存储到本地：当再次登录时，就是上次点击的城市
       localStorage.setItem("id",item.cityId)
       this.$router.go(-1)//点击时，后退一步
 
     }
   }
-  //   mounted() {
-  //     this.getHot();
-  //   },
-  //   methods: {
-  //     getHot() {
-  //         getHotList().then((res) => {
-  //           this.list = res.data.data.hot;
-  //         });
-  //     },
-  //   },
+  //将数据和方法添加到vuex中
+//   <script>
+// import Vue from 'vue'
+// import Vuex from 'vuex'
+// import { getHotList } from "@/api";//引入'axios'请求
+
+// Vue.use(Vuex)
+
+// export default new Vuex.Store({
+//     state: {
+//       cityName:localStorage.getItem("name") || "北京", //将最后的城市选择，存储到本地：当再次登录时，就是上次点击的城市
+//       cityId:localStorage.getItem("id") || 1002,       //setItem:是存，getItem：是取，||:如果没有存储过，则默认是："北京",1002,
+
+//       // 数据也要放在VueX中
+//       list:[],
+//     },
+//     mutations: {
+//       changeCity(state,payload){
+//         state.cityName = payload.name //state的cityName = payload形参.name是自定义的
+//         state.cityId = payload.id //state的cityId = payload形参.id是自定义的
+//       },
+//       getHotState(state,payload){//因为不可以直接获取 state中的 list:[]，需要在 mutations设置方法，并传值
+//                     // payload = actions 中 getHot内的res
+//         state.list = payload.data.data.not
+//       }
+//     },
+//     actions: {//将异步的请求数据放在actions中
+//       getHot({commit}){//传入 mutations 中 {commit}的解构方法，将 actions 中获取的异步数据，传给 mutations
+//         getHotList().then((res) => {
+//           // this.list = res.data.data.not ----是不可以直接获取 state中的 list:[]
+//           commit("getHotState",res)
+//           //commit 传给 mutations 的 getHotState方法，   res = payload
+//         })
+//       }
+//       //或 async 和 await
+//       async getHot({commit}){
+//         const res = await getHotList()
+//         // this.list = res.data.data.not ----是不可以直接获取 state中的 list:[]
+//         commit("getHotState",res)
+//       }
+//     }
+// })
+
+// 2. 在组件中通过计算属性获取：Store仓库actions中的异步方法
+
+// <template>
+//   <div class="father" v-if="list.length">
+//     <div class="not-city">
+//       <p>热门城市</p>
+//       <div class="not-diqu" v-for="item in hotCity.cities" :key="item.cityId" @click="getcity(item)">
+//         {{ item.name }}
+//       </div>
+//     </div>
+//     <div class="city" v-for="(item, index) in otherCity" :key="index">
+//       <p>{{ item.title }}</p>
+//       <div class="diqu" v-for="val in item.cities" :key="val.cityId" @click="getcity(val)">
+//         {{ val.name }}
+//       </div>
+//     </div>
+//   </div>
+// </template>
+
+// <script>
+// 删除，import { getHotList } from "@/api"; 因为直接在 Store仓库的 actions 中请求数据，所以不需要在组件中引入了
+// import { mapState,mapMutations} from "vuex";
+
+// export default {
+//   mounted(){//将 actions 的方法引入到生命周期
+//     this.$store.dispatch("getHot")，//Store仓库actions中的异步方法   ...mapState(["list"])//获取state 的 list
+//   },
+//   methods:{
+//     ...mapMutations(["changeCity"]),//引入Store仓库中 mutations方法
+//     getcity(item){//上面共用一个事件，（item，val），此时的item是形参
+//       this.changeCity({name:item.name,id:item.cityId})//store仓库的 mutations 方法，name是payload.name,id是payload.id
+//       localStorage.setItem("name",item.name)//当再次登录时，就是上次点击的城市
+//       localStorage.setItem("id",item.cityId)
+//       this.$router.go(-1)//点击时，后退一步
+//     }
+//   },
+//   computed:() {//将 state 的 list:[],放入到计算属性中
+//     ...mapState(["list"]),//获取state 的 list数据
+//     hotCity() {
+//       return this.list[0];
+//     },
+//     otherCity() {
+//       return this.list.slice(1);
+//     },
+//   },
+// };
 };
 </script>
 
