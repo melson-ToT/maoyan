@@ -15,7 +15,6 @@ const routes = [
             {
                 path: "/home", 
                 redirect: "/home/film",
-                
             },
             {
                 path: "/home/film", 
